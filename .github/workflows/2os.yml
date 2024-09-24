@@ -11,14 +11,14 @@ jobs:
               run:  echo "Hello,It is in Build Stage"
     
     test:
-        runs-on: widnows-latest
+        runs-on: windows-latest
         needs:   build
         steps:
             - name: Retrieve the latest code pushed
               uses: actions/checkout@v2
 
             - name: test
-              run:  print "Hello,Testing is done after build"
+              run:  echo "Hello,Testing is done after build"
 
     deploy:
         runs-on: ubuntu-latest
