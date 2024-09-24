@@ -17,5 +17,5 @@ jobs:
               uses: actions/checkout@v2
 
             - name: windows
-              run:  echo "Hello,Running on Windows"
+              run:  print "Hello,Running on Windows"
 
