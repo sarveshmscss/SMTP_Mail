@@ -1,0 +1,21 @@
+name: Running in two OS
+on: [push]
+jobs:
+    build_linux:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Retrieve the latest code pushed
+              uses: actions/checkout@v2
+
+            - name: linux
+              uses: echo "Hello,Running on linux"
+    
+    build_windows:
+        runs-on: windows-latest
+        steps:
+            - name: Retrieve the latest code pushed
+              uses: actions/checkout@v2
+
+            - name: windows
+              uses: Print "Hello,Running on Windows"
+
