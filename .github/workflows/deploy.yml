@@ -8,4 +8,4 @@ jobs:
               uses: actions/checkout@v2
             
             - name: Print the Message
-              uses: echo "Welcome to World of Sarvesh!!"
+              run: echo "Welcome to World of Sarvesh!!"
