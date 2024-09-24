@@ -1,21 +1,31 @@
 name: Running in two OS
 on: [push]
 jobs:
-    build_linux:
+    build:
         runs-on: ubuntu-latest
         steps:
             - name: Retrieve the latest code pushed
               uses: actions/checkout@v2
 
             - name: linux
-              run:  echo "Hello,Running on linux"
+              run:  echo "Hello,It is in Build Stage"
     
-    build_windows:
-        runs-on: windows-latest
+    test:
+        runs-on: widnows-latest
+        needs:   build
         steps:
             - name: Retrieve the latest code pushed
               uses: actions/checkout@v2
 
-            - name: windows
-              run:  print "Hello,Running on Windows"
+            - name: test
+              run:  print "Hello,Testing is done after build"
 
+    deploy:
+        runs-on: ubuntu-latest
+        needs: test
+        steps:
+          - name: Retrieve the latest code pushed
+            uses: actions/checkout@v2
+          
+          - name: deploy
+            run:  print "Hello,deployed"
