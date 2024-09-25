@@ -50,4 +50,4 @@ jobs:
           - name: deploy
             run:  |
              cat build_output.txt
-             echo "Hello,deployed"
+             echo "Hello,${{secrets.USER_NAME}}"
